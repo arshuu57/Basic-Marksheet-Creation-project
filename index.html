@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>marksheet craetion</title>
+   <style>
+    .main{
+        align-items: center;
+        margin-top: 200px;
+        margin-left: 200px;
+        border: 2px solid black;
+        width: 300px;
+        text-align: center;
+        height: 400px;
+        display: grid;
+        background-color: #9ad9e7;
+    }
+    .main label{
+        text-align: start;
+        margin-left: 20px;
+    }
+    .main input{
+          width: 200px;
+          margin-left: 20px;
+    }
+    #sub{
+       width: 150px;
+       margin-left: 20px;
+       background-color: #317db3;
+       
+    }
+    .main1{
+        display: flex;
+        margin-left: 100px;
+    }
+    .grade{
+        border: 2px solid black;
+        height: 400px;
+        width: 400px;
+        margin-top: 200px;
+        margin-left: 20px;
+        background-color: #27a9a9;
+    }
+    .grade h1{
+         margin-left: 10px;
+    }
+    body{
+        background-color: brown;
+    }
+   </style>
+   
+</head>
+<body>
+    <div class="main1">
+    <div class="main">
+        <label for="">Enter the Name</label>
+        <input type="text" placeholder="enter the Name" id="cla1_1" value="">
+        <label for="">Enter Hindi Marks</label>
+        <input type="text" placeholder="enter the marks" id="cla1" value="">
+        <label for="">Enter English Marks</label>
+        <input type="text" placeholder="enter the marks" id="cla2" value="">
+        <label for="">Enter Maths Marks</label>
+        <input type="text" placeholder="enter the marks" id="cla3" value="">
+        <label for="">Enter Science Marks</label>
+        <input type="text" placeholder="enter the marks" id="cla4" value="">
+        <label for="">Enter biology Marks</label>
+        <input type="text" placeholder="enter the marks" id="cla5" value="">
+        <button id="sub" onclick="submit()">Submit</button>
+        
+    </div>
+    <div class="grade">
+        <h1>Your Name :-<span id="dis1"></span></h1>
+        <h1>ToTal :-<span id="dis2"></span></h1>
+        <h1>Your Percentage :-<span id="dis3"></span></h1>
+        <h1>Grade :-<span id="dis4"></span></h1>
+    </div>
+    </div>
+    
+    <script>
+
+   
+    function submit()
+    {
+        let name=document.getElementById("cla1_1").value;
+        let hin=document.getElementById("cla1").value;
+        let eng=document.getElementById("cla2").value;
+        let math=document.getElementById("cla3").value;
+        let sci=document.getElementById("cla4").value;
+        let bio=document.getElementById("cla5").value;
+
+        let total=parseInt(hin)+parseInt(eng)+parseInt(math)+parseInt(sci)+parseInt(bio);
+        let per=(total)/5;
+
+        let grade1='A';
+        let grade2='B';
+        let grade3='C';
+        let grade4='D';
+        let grade5='E';
+        let grade6='F';
+        let grade7='Failed';
+        if(per>=90)
+      {
+            document.getElementById("dis4").innerHTML=grade1;
+      }
+      else if(per>=80)
+      {
+        document.getElementById("dis4").innerHTML=grade2;
+      }
+      else if(per>=70)
+      {
+        document.getElementById("dis4").innerHTML=grade3;
+      }
+      else if(per>=60)
+      {
+        document.getElementById("dis4").innerHTML=grade4;
+      }
+      else if(per>=50)
+      {
+        document.getElementById("dis4").innerHTML=grade5;
+      }
+      else if( per>40)
+      {
+        document.getElementById("dis4").innerHTML=grade6;
+      }
+      else
+      {
+        document.getElementById("dis4").innerHTML=grade7;
+      }
+      
+     
+
+        document.getElementById("dis1").innerHTML=name;
+        document.getElementById("dis2").innerHTML=total;
+        document.getElementById("dis3").innerHTML=per;
+       
+     
+    
+
+
+    }
+
+    </script>
+</body>
+</html>
